@@ -1,0 +1,15 @@
+{
+  "AUTH0_DOMAIN": "dev-vn0fevt7.au.auth0.com",
+  "AUTH0_CLIENT_ID": "ft9cxndDl8APrVPYNJwBftxHaG8HBPC1",
+  "AUTH0_CLIENT_SECRET":
+    "bP1nhtdwVpx8VXDmg7kXjjvFCSJ3d7KD_K-7BVS3U_ZgHTmTFqubmgJE4ydrkPeH",
+  "AUTH0_ALLOW_DELETE": false,
+  "AUTH0_EXCLUDED_RULES": ["auth0-account-link-extension"],
+  "callbacks": [
+    "##ENVIRONMENT_URL##/auth/callback"
+  ],
+  "jwt_configuration": {
+    "lifetime_in_seconds": "##JWT_TIMEOUT##",
+    "secret_encoded": $true
+  }
+};

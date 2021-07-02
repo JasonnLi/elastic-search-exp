@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "@alias/api": ["src/api"],
+      "@alias/components": ["src/components"],
+      "@alias/pages": ["src/pages"],
+      "@alias/api/*": ["src/api/*"],
+      "@alias/components/*": ["src/components/*"],
+      "@alias/pages/*": ["src/pages/*"]
+    },
+    "lib": ["es2015", "es5", "es2016", "dom"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}

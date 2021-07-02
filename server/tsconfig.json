@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": false,
+    "target": "ES2018",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["./typings"],
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

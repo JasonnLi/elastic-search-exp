@@ -1,0 +1,89 @@
+version: '3.7'
+
+
+services:
+    es:
+        container_name: es
+        hostname: es
+        image: elasticsearch:7.7.0
+        ports:
+        - 9200:9200
+        - 9300:9300
+        environment:
+            discovery.type: single-node
+            
+    kibana:
+        container_name: kibana
+        hostname: kibana
+        image: kibana:7.6.0
+        environment:
+            ELASTICSEARCH_HOSTS: http://es:9200
+        ports:
+        - 5601:5601
+        
+    server:
+        container_name: server
+        hostname: server
+        restart: always
+        build: 
+            context: ./server
+            dockerfile: local.Dockerfile
+        environment:
+            PORT: 3000
+            MONGO_CONSTRING: mongodb://mongo1/SP_test
+            KEYS: secret
+            REFRESH_KEYS: refresh-secret
+        ports:
+        - 3000:3000
+        volumes:
+        - "./server/src:/usr/src/app/src"
+        
+    client:
+        container_name: client
+        hostname: client
+        build:
+            context: ./client
+            dockerfile: local.Dockerfile
+        ports:
+        - 3001:3001
+        volumes:
+         - "./client/src:/usr/src/app/src"
+         - "./client/webpack:/usr/src/app/webpack"
+        
+    mongo1:
+        hostname: mongo1
+        image: mongo
+        restart: always
+        entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: test            
+        ports:
+        - 27017:27017
+        volumes:
+        - "mongo_data:/data/db"
+        
+    mongo-express:
+        hostname: mongo-express
+        image: mongo-express
+        restart: always
+        ports:
+        - 8081:8081
+        environment:
+            ME_CONFIG_MONGODB_SERVER: mongo1
+            ME_CONFIG_MONGODB_PORT: 27017
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: test
+            
+    monstache:
+        hostname: monstache
+        image: rwynn/monstache
+        restart: always
+        environment:
+            MONSTACHE_MONGO_URL: mongodb://mongo1:27017
+            MONSTACHE_ES_URLS: http://es:9200
+
+
+volumes:
+    mongo_data:
+        external: true

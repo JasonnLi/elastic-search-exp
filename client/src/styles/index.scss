@@ -1,0 +1,137 @@
+@import "~antd/dist/antd.css";
+
+.title {
+  font-size: 35px;
+  top: 50px;
+}
+
+.common-setting-btn {
+  border-radius: 4px;
+  font-size: large;
+}
+
+#create-btn {
+  position: relative;
+  top: -50px;
+}
+
+#act-divider {
+  color: #bfbfbf;
+}
+
+#login-btn {
+  float: right;
+}
+
+#logout-btn {
+  position: relative;
+  float: right;
+}
+
+#vis-btn {
+  float: left;
+}
+
+.vis-login-btn-container {
+  position: absolute;
+  width: 280px;
+  height: 40px;
+  top: 50px;
+  right: 20px;
+}
+
+.vis-logout-btn-container {
+  position: absolute;
+  width: 280px;
+  height: 40px;
+  top: 15px;
+  right: 20px;
+}
+
+.welcome-text {
+  position: absolute;
+  top: -14px;
+  right: 100px;
+}
+
+//Visualisation Page css
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.site-layout #bar-nivo-vis {
+    float: left;
+    width: 46%;
+    height: 400px;
+}
+
+.site-layout #bar-recharts-vis {
+    float: left;
+    width: 48%;
+    height: 400px;
+}
+
+.site-layout #map-vis {
+    position: relative;
+    width: 96.5%;
+    height: 400px;
+}
+
+//Login Page css
+.login-form-div {
+  position: relative;
+  top: 250px;
+  left: 500px;
+  width: 40%;
+
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-forgot {
+  float: right;
+  width: 100%;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.register-div {
+  position: relative;
+  top: 30px;
+  left: 250px;
+  width: 60%;
+  height: 500%;
+  padding: 24;
+  background: #fff;
+}
+
+.register-form {
+  position: relative;
+  right: 50px;
+}
+
+.register-err-info {
+  color: rgb(184, 21, 21);
+}

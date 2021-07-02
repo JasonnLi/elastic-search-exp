@@ -1,0 +1,16 @@
+{
+  "workbench.colorCustomizations": {
+    "[Panda Syntax]": {
+      "editorGutter.modifiedBackground": "#008cff",
+      "editorGutter.addedBackground": "#00bd29",
+      "editorGutter.deletedBackground": "#ff7300",
+      "editorOverviewRuler.modifiedForeground": "#008cff",
+      "editorOverviewRuler.addedForeground": "#00bd29",
+      "editorOverviewRuler.deletedForeground": "#ff7300",
+      "editorOverviewRuler.errorForeground": "#ff0000"
+    },
+    "activityBar.background": "#0D2477",
+    "titleBar.activeBackground": "#1332A6",
+    "titleBar.activeForeground": "#FBFCFF"
+  }
+}

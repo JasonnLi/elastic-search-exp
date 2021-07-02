@@ -1,0 +1,9 @@
+
+Create a volume for mongo database "mongo_data"
+docker volume create mongo_data
+
+Run rs.initiate() on the mongo server. You can do this using "docker exec"
+First run "docker ps" and get the mongo container id
+
+Then run:
+docker exec CONTAINER_ID_HERE mongo localhost --eval "rs.initiate()"
